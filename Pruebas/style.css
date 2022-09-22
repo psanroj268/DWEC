@@ -1,10 +1,67 @@
-body {background-color: rgb(0, 0, 0);}
+@font-face {
+  font-family: letra especial;
+  src: url(./FOnt/font1.TTF);
+}
+@font-face {
+  font-family: letra normal;
+  src: url(./FOnt/font2.ttf);
+}
 
-#titulo {background-color: rgb(0, 110, 255);
-         margin: auto;
-    }
+body {
+  background: url(./Images/ImagenFondo.jpg) repeat;
+  text-align: justify;
+  font-family: letra normal;
+}
 
-div {background-color: rgb(0, 255, 213);}
+#container {
+  margin: 0 auto;
+  max-width: 960px;
+}
 
-footer {background-color: rgb(0, 110, 255);
-        }
+#titulo {
+  color: chartreuse;
+  text-align: center;
+  padding: 20px;
+  font-family: letra especial;
+  font-size: 20px;
+}
+
+#contenido {
+  background-color: rgb(156, 43, 179);
+  clear: left;
+  padding: 15px;
+}
+
+#lista:hover {
+    transform: scale(1);
+    background-color: rgb(156, 43, 179);
+    padding: 15px;
+}
+
+p {
+    font-size: 20px;
+    color: white;
+}
+
+li {
+  padding: 5px;
+}
+
+a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #429;
+  text-decoration: none;
+}
+
+#footer {
+  color: white;
+  background-color: chartreuse;
+  text-align: justify;
+  padding: 10px;
+  margin: 0px;
+  height: 1%;
+}
+
+input {
+  margin: 6px;
+}
