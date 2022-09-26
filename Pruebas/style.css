@@ -1,10 +1,10 @@
 @font-face {
   font-family: letra especial;
-  src: url(./FOnt/font1.TTF);
+  src: url(./Fonts/font1.TTF);
 }
 @font-face {
   font-family: letra normal;
-  src: url(./FOnt/font2.ttf);
+  src: url(./Fonts/font2.ttf);
 }
 
 body {
