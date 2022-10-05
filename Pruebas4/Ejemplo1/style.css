@@ -28,6 +28,9 @@
       border: 1px solid chartreuse;
       margin-bottom: 20px;
     }
+
+    #valores {color: white;
+              font-size: 20px;}
     
     p {
         font-size: 20px;
