@@ -1,37 +1,23 @@
 "use strict"
 
-let valor1 = document.getElementById("operador1");
-let valor2 = document.getElementById("operador2");
+let frase1 = document.getElementById("frase");
 
-let suma = document.getElementById("boton1");
-let resta = document.getElementById("boton2");
-let multiplica = document.getElementById("boton3");
-let divide = document.getElementById("boton4");
-let parteEntera = document.getElementById("boton5");
-let parteDecimal = document.getElementById("boton6");
+let mayusculas = document.getElementById("boton1");
+let minusculas = document.getElementById("boton2");
+let priMayus = document.getElementById("boton3");
+let ultMayus = document.getElementById("boton4");
+let priMinus = document.getElementById("boton5");
+let ultMinus = document.getElementById("boton6");
+let vocMayus = document.getElementById("boton7");
+let vocMinus = document.getElementById("boton8");
+let conMayus = document.getElementById("boton9");
+let conMinus = document.getElementById("boton10");
 
-let resultado = document.getElementById("salida");
+let aleatorio = document.getElementById("boton11");
+let parar = document.getElementById("boton12");
+let rapido = document.getElementById("boton13");
+let lento = document.getElementById("boton14");
 
-suma.onclick = function(){
-    resultado.value = parseFloat(valor1.value) + parseFloat(valor2.value);
-}
-
-resta.onclick = function(){
-    resultado.value = parseFloat(valor1.value) - parseFloat(valor2.value);
-}
-
-multiplica.onclick = function(){
-    resultado.value = parseFloat(valor1.value) * parseFloat(valor2.value);
-}
-
-divide.onclick = function(){
-    resultado.value = parseFloat(valor1.value) / parseFloat(valor2.value);
-}
-
-parteEntera.onclick = function(){
-    resultado.value = parseInt(resultado.value);
-}
-
-parteDecimal.onclick = function(){
-    resultado.value = (parseFloat(resultado.value) - parseInt(resultado.value));
+mayusculas.onclick = function(){
+    frase1.value = frase1.toUpperCase();
 }
