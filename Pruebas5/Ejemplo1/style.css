@@ -1,0 +1,59 @@
+@font-face {
+    font-family: letra especial;
+    src: url(../Fonts/font1.TTF);
+  }
+  @font-face {
+    font-family: letra normal;
+    src: url(../Fonts/font2.ttf);
+  }
+    
+    body {
+      background: url(../Images/ImagenFondo.jpg) repeat;
+      font-family: letra normal;
+    }
+    
+    #container {
+      margin: 0 auto;
+      max-width: 960px;
+      border: 1px solid chartreuse;
+      text-align: center;
+    }
+    
+    #titulo {
+      color: chartreuse;
+      text-align: center;
+      padding: 20px;
+      font-family: letra especial;
+      font-size: 20px;
+      border: 1px solid chartreuse;
+      margin-bottom: 20px;
+    }
+
+    #valores {color: white;
+              font-size: 20px;}
+    
+    p {
+        font-size: 20px;
+        color: white;
+    }
+    
+    a {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(217, 0, 255);
+      text-decoration: none;
+      font-size: 40px;
+    }
+    
+    #footer {
+      color: white;
+      background-color: chartreuse;
+      text-align: justify;
+      padding: 10px;
+      margin: 0px;
+      margin-top: 20px;
+      height: 1%;
+    }
+    
+    input {
+      margin: 6px;
+    }
