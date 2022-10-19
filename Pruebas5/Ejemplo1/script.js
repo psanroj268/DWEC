@@ -28,15 +28,11 @@ function aleatorioExclusivo(min, max) {
 
 cambio.onclick = function () {
   console.log("cambio clicked");
-  let aleatoria = aleatorioExclusivo(0, 100);
 
-  document.getElementById("frase").innerHTML = "";
 
-  fetch(`https://jsonplaceholder.typicode.com/posts/${aleatoria}`)
+  fetch(`https://api.chucknorris.io/jokes/random`)
     .then((response) => response.json())
-    .then((json) => {
-      document.getElementById("frase").innerHTML = `${json.body}`;
-    });
+    .then((json) => frase1.value = json.value);
 };
 
 function parado() {
