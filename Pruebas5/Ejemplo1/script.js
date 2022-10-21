@@ -29,10 +29,14 @@ function aleatorioExclusivo(min, max) {
 cambio.onclick = function () {
   console.log("cambio clicked");
 
+  let aleatoria = aleatorioExclusivo(0,100);
 
-  fetch(`https://api.chucknorris.io/jokes/random`)
+  document.getElementById("frase").innerHTML = "";
+
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${aleatoria}`)
     .then((response) => response.json())
-    .then((json) => frase1.value = json.value);
+    .then((json) => frase1.value = json.body);
 };
 
 function parado() {
