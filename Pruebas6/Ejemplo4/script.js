@@ -4,15 +4,11 @@ let frase1 = document.getElementById("frase");
 
 let cambio = document.getElementById("botont");
 
-let contar = document.getElementById("boton1");
+let comprueba = document.getElementById("boton1");
 
 let frase2 = document.getElementById("frase2");
-let frase3 = document.getElementById("frase3");
-let frase4 = document.getElementById("frase4");
 
-let contadora = 0;
-let contadora2 = 0;
-let contadora3 = 0;
+let i = false;
 
 function aleatorioExclusivo(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -31,48 +27,40 @@ cambio.onclick = function () {
     .then((json) => frase1.value = json.body);
 
     frase2.innerHTML = "";
-    frase3.innerHTML = "";
-    frase4.innerHTML = "";
+    i = false;
 };
 
-function cont () {
-  const palabras = frase1.value.split(" ");
+function comprobar () {
 
-  for (let i = 0; i < palabras.length; i++) {
-      contadora++;
-    
-  }
-}
-function cont2 () {
-  const palabras = frase1.value.split(" ");
+  let frasex = frase1.value.toLowerCase();
 
-  for (let i = 0; i < palabras.length; i++) {
-      for (let j = 0; j < palabras[i].length; j++) {
-        if (palabras[i][j] == "a" || palabras[i][j] == "e" || palabras[i][j] == "i" || palabras[i][j] == "o" || palabras[i][j] == "u" ||
-            palabras[i][j] == "A" || palabras[i][j] == "E" || palabras[i][j] == "I" || palabras[i][j] == "O" || palabras[i][j] == "U") {
-          contadora2++;
-        } else if (palabras[i][j] == "0" || palabras[i][j] == "1" || palabras[i][j] == "2" || palabras[i][j] == "3" || palabras[i][j] == "4" ||
-                   palabras[i][j] == "5" || palabras[i][j] == "6" || palabras[i][j] == "7" || palabras[i][j] == "8" || palabras[i][j] == "9" || palabras[i][j] == "."){
+  frasex = frase1.value.replace(/\s+/g, "");
 
-        } else {
-        
-          contadora3++;
-        }
-        
-      }
-    
+  frasex = frasex.toLowerCase();
+
+  console.log(frasex);
+
+  const palabras = frasex.split("");
+
+  let invierte = palabras.reverse();
+
+  let unir = invierte.join("");
+
+  console.log(unir);
+
+  if (frasex == unir) {
+    i = true;
   }
 }
 
-contar.onclick = function () {
+comprueba.onclick = function () {
 
-    cont();
-    cont2();
+    comprobar();
 
-    frase2.innerHTML = "Hay " + contadora + " palabras.";
-    frase3.innerHTML = "Hay " + contadora2 + " vocales.";
-    frase4.innerHTML = "Hay " + contadora3 + " consonantes.";
-    contadora3 = 0;
-    contadora2 = 0;
-    contadora = 0;
+    if (i == true ){
+      frase2.innerHTML = "La frase es palíndroma";
+    } else {
+      frase2.innerHTML = "La frase no es palíndroma";
+    }
+
 }
