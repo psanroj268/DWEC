@@ -29,6 +29,10 @@ cambio.onclick = function () {
   fetch(`https://jsonplaceholder.typicode.com/posts/${aleatoria}`)
     .then((response) => response.json())
     .then((json) => frase1.value = json.body);
+
+    frase2.innerHTML = "";
+    frase3.innerHTML = "";
+    frase4.innerHTML = "";
 };
 
 function cont () {
