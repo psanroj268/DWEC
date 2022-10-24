@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+}
+
+#container {
+    border-style: solid;
+    border-color: rgb(6, 255, 193);
+    width: 50%;
+    height: 500px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#pantalla {
+    margin-top: 8%;
+    width: 25%;
+}
+
+input {
+    margin: 6px;
+    height: 9%;
+    width: 7%;
+  }
