@@ -53,6 +53,8 @@ let actual = 0;
 
 let numeroMemoria = "";
 
+let contador = 0;
+
 cero.onclick = function () {
   pantalla.value += "0";
 };
@@ -94,9 +96,10 @@ nueve.onclick = function () {
 };
 
 suma.onclick = function () {
-  anterior += parseFloat(pantalla.value);
-  pantalla.value = "";
-  operador = "+";
+    anterior += parseFloat(pantalla.value);
+    pantalla.value = "";
+    operador = "+";
+  
 };
 
 resta.onclick = function () {
@@ -106,29 +109,31 @@ resta.onclick = function () {
 };
 
 decimal.onclick = function () {
-  pantalla.value += ".";
+  contador++;
+  if (contador > 1){
+
+  } else {
+    pantalla.value += ".";
+  }
+  
+  
 };
 
-volver.onclick = function(){
+volver.onclick = function () {
+  pantalla.value = pantalla.value.substring(0, pantalla.value.length - 1);
+};
 
-    pantalla.value = pantalla.value.substring(0, pantalla.value.length - 1);
-}
+raizCuadrada.onclick = function () {
+  pantalla.value = Math.sqrt(pantalla.value);
+};
 
-raizCuadrada.onclick = function(){
-
-    pantalla.value = Math.sqrt(pantalla.value);
-}
-
-cambioSigno.onclick = function(){
-
-    if(pantalla.value.charAt(0) == "-"){
-        pantalla.value = pantalla.value.slice(1);
-
-    } else {
-
-        pantalla.value = "-" + pantalla.value;
-    }
-}
+cambioSigno.onclick = function () {
+  if (pantalla.value.charAt(0) == "-") {
+    pantalla.value = pantalla.value.slice(1);
+  } else {
+    pantalla.value = "-" + pantalla.value;
+  }
+};
 
 multiplicacion.onclick = function () {
   if (anterior == "0") {
@@ -140,6 +145,13 @@ multiplicacion.onclick = function () {
   operador = "*";
 };
 
+division.onclick = function () {
+  anterior = pantalla.value;
+  console.log(anterior);
+  pantalla.value = "";
+  operador = "/";
+};
+
 memoria.onclick = function () {
   numeroMemoria = parseFloat(pantalla.value);
   pantalla.value = "";
@@ -147,11 +159,97 @@ memoria.onclick = function () {
 
 constantePI.onclick = function () {
     pantalla.value = Math.PI;
-  };
+
+};
+
+constanteE.onclick = function () {
+    pantalla.value = Math.E;
+
+};
 
 coseno.onclick = function () {
-    pantalla.value = Math.PI;
-  };
+    anterior = pantalla.value;
+    pantalla.value = "";
+    operador = "cos";
+
+};
+
+tangente.onclick = function () {
+  pantalla.value = Math.tan(pantalla.value * Math.PI / 180);
+  
+};
+
+seno.onclick = function () {
+  pantalla.value = Math.sin(pantalla.value);
+  
+};
+
+logaritmoNeperiano.onclick = function () {
+  anterior = pantalla.value;
+  pantalla.value = "";
+  operador = "logaN";
+  
+};
+
+logaritmo.onclick = function () {
+  pantalla.value = Math.log10(pantalla.value);
+  
+};
+
+numeroElevado.onclick = function () {
+  anterior = pantalla.value;
+  pantalla.value = "";
+  operador = "numEle";
+
+};
+
+modulo.onclick = function () {
+  anterior = pantalla.value;
+  pantalla.value = "";
+  operador = "modu";
+
+};
+
+porcentaje.onclick = function () {
+  anterior = pantalla.value / 100;
+  pantalla.value = "";
+  operador = "porcen";
+
+};
+
+inversa.onclick = function () {
+  pantalla.value = "1/" + pantalla.value;
+
+};
+
+random.onclick = function () {
+  let num = Math.floor(Math.random() * 10);
+
+  pantalla.value += num;
+
+};
+
+dosElevado.onclick = function () {
+  let val = 1;
+
+  for (let i = 0; i < pantalla.value; i++) {
+    val *= 2;
+  }
+
+  pantalla.value = val;
+
+};
+
+factorial.onclick = function () {
+  let resul = 1;
+
+  for (let i = 1; i <= pantalla.value; i++) {
+    resul *= i;
+  }
+
+  pantalla.value = resul;
+
+};
 
 limpiar.onclick = function () {
   pantalla.value = "";
@@ -163,6 +261,8 @@ limpiar.onclick = function () {
   actual = 0;
 
   numeroMemoria = "";
+
+  let contador = 0;
 };
 
 limpiaCompleto.onclick = function () {
@@ -175,6 +275,8 @@ limpiaCompleto.onclick = function () {
   actual = 0;
 
   numeroMemoria = "";
+
+  let contador = 0;
 };
 
 igual.onclick = function () {
@@ -196,7 +298,51 @@ igual.onclick = function () {
       console.log(anterior);
 
       break;
+    case "/":
+      actual = pantalla.value;
 
+      pantalla.value = parseFloat(anterior) / parseFloat(actual);
+      console.log(anterior);
+
+      break;
+    case "cos":
+      actual = pantalla.value;
+
+      pantalla.value = Math.cos(anterior) * actual;
+
+      break;
+    case "numEle":
+      actual = pantalla.value;
+
+      let resultado = 1;
+
+      for (let i = 0; i < actual; i++){
+        resultado *= anterior;
+      }
+  
+      pantalla.value = resultado;
+  
+      break;
+    case "modu":
+      actual = pantalla.value;
+
+      pantalla.value = anterior % actual;
+  
+      break;
+    case "logaN":
+      actual = pantalla.value;
+
+      pantalla.value = Math.log(actual) / Math.log(anterior);
+  
+      break;
+    case "porcen":
+      actual = pantalla.value;
+
+      pantalla.value = anterior * actual;
+
+      anterior = pantalla.value;
+  
+      break;
     default:
       pantalla.value = 0;
   }
