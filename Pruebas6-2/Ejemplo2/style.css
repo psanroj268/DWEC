@@ -30,14 +30,16 @@
     }
 
     #valores {color: white;
-              font-size: 20px;}
+              font-size: 20px;
+              text-align: center;}
 
-              #titulos {color: white;
-                font-size: 20px;}
+    #titulos {color: white;
+              font-size: 20px;}
     
     p {
         font-size: 20px;
         color: white;
+        margin-left: 35%;
     }
     
     a {

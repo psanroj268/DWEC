@@ -1,6 +1,7 @@
 "use strict";
 
-let pantalla = document.getElementById("texto");
+let pantalla = document.getElementById("answer");
+let pantalla2 = document.getElementById("answer2");
 
 let memoria = document.getElementById("boton1");
 let volver = document.getElementById("boton2");
@@ -153,8 +154,14 @@ division.onclick = function () {
 };
 
 memoria.onclick = function () {
-  numeroMemoria = parseFloat(pantalla.value);
-  pantalla.value = "";
+  if(numeroMemoria != ""){
+    pantalla.value = numeroMemoria;
+    pantalla2.value = "";
+  } else {
+    numeroMemoria = parseFloat(pantalla.value);
+    pantalla.value = "";
+    pantalla2.value = "M";
+  }
 };
 
 constantePI.onclick = function () {
@@ -260,13 +267,12 @@ limpiar.onclick = function () {
 
   actual = 0;
 
-  numeroMemoria = "";
-
   let contador = 0;
 };
 
 limpiaCompleto.onclick = function () {
   pantalla.value = "";
+  pantalla2.value = "";
 
   anterior = 0;
 
