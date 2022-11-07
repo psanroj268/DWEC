@@ -4,7 +4,7 @@ let select = document.getElementById("calculadoras");
 
 select.addEventListener('change',
   function(){
-    var selectedOption = this.options[select.selectedIndex];
+    let selectedOption = this.options[select.selectedIndex];
 
     if (selectedOption.value == "numerica"){
       document.getElementById("estilos").href = "./style.css"
@@ -12,9 +12,6 @@ select.addEventListener('change',
       document.getElementById("estilos").href = "./style2.css"
     }
   });
-
-
-let cientific = document.getElementById("cientifica");
 
 let pantalla = document.getElementById("answer");
 let pantalla2 = document.getElementById("answer2");
@@ -64,7 +61,7 @@ let tangente = document.getElementById("boton36");
 
 let anterior = 0;
 
-let operador = 0;
+let operador = "";
 
 let actual = 0;
 
@@ -72,69 +69,7 @@ let numeroMemoria = "";
 
 let contador = 0;
 
-cero.onclick = function () {
-  pantalla.value += "0";
-};
-
-uno.onclick = function () {
-  pantalla.value += "1";
-};
-
-dos.onclick = function () {
-  pantalla.value += "2";
-};
-
-tres.onclick = function () {
-  pantalla.value += "3";
-};
-
-cuatro.onclick = function () {
-  pantalla.value += "4";
-};
-
-cinco.onclick = function () {
-  pantalla.value += "5";
-};
-
-seis.onclick = function () {
-  pantalla.value += "6";
-};
-
-siete.onclick = function () {
-  pantalla.value += "7";
-};
-
-ocho.onclick = function () {
-  pantalla.value += "8";
-};
-
-nueve.onclick = function () {
-  pantalla.value += "9";
-};
-
-suma.onclick = function () {
-    anterior += parseFloat(pantalla.value);
-    pantalla.value = "";
-    operador = "+";
-  
-};
-
-resta.onclick = function () {
-  anterior += parseFloat(pantalla.value);
-  pantalla.value = "";
-  operador = "-";
-};
-
-decimal.onclick = function () {
-  contador++;
-  if (contador > 1){
-
-  } else {
-    pantalla.value += ".";
-  }
-  
-  
-};
+let resultado8 = 0;
 
 volver.onclick = function () {
   pantalla.value = pantalla.value.substring(0, pantalla.value.length - 1);
@@ -150,23 +85,6 @@ cambioSigno.onclick = function () {
   } else {
     pantalla.value = "-" + pantalla.value;
   }
-};
-
-multiplicacion.onclick = function () {
-  if (anterior == "0") {
-    anterior++;
-  }
-  anterior *= parseFloat(pantalla.value);
-  console.log(anterior);
-  pantalla.value = "";
-  operador = "*";
-};
-
-division.onclick = function () {
-  anterior = pantalla.value;
-  console.log(anterior);
-  pantalla.value = "";
-  operador = "/";
 };
 
 memoria.onclick = function () {
@@ -274,98 +192,7 @@ factorial.onclick = function () {
 
 };
 
-limpiar.onclick = function () {
-  pantalla.value = "";
-
-  anterior = 0;
-
-  operador = 0;
-
-  actual = 0;
-
-  let contador = 0;
-};
-
-limpiaCompleto.onclick = function () {
-  pantalla.value = "";
-  pantalla2.value = "";
-
-  anterior = 0;
-
-  operador = 0;
-
-  actual = 0;
-
-  numeroMemoria = "";
-
-  let contador = 0;
-};
-
 igual.onclick = function () {
-  switch (operador) {
-    case "+":
-      actual = pantalla.value;
-
-      pantalla.value = parseFloat(anterior) + parseFloat(actual);
-      break;
-    case "-":
-      actual = pantalla.value;
-
-      pantalla.value = parseFloat(anterior) - parseFloat(actual);
-      break;
-    case "*":
-      actual = pantalla.value;
-
-      pantalla.value = parseFloat(anterior) * parseFloat(actual);
-      console.log(anterior);
-
-      break;
-    case "/":
-      actual = pantalla.value;
-
-      pantalla.value = parseFloat(anterior) / parseFloat(actual);
-      console.log(anterior);
-
-      break;
-    case "cos":
-      actual = pantalla.value;
-
-      pantalla.value = Math.cos(anterior) * actual;
-
-      break;
-    case "numEle":
-      actual = pantalla.value;
-
-      let resultado = 1;
-
-      for (let i = 0; i < actual; i++){
-        resultado *= anterior;
-      }
+  teclaIgual();
   
-      pantalla.value = resultado;
-  
-      break;
-    case "modu":
-      actual = pantalla.value;
-
-      pantalla.value = anterior % actual;
-  
-      break;
-    case "logaN":
-      actual = pantalla.value;
-
-      pantalla.value = Math.log(actual) / Math.log(anterior);
-  
-      break;
-    case "porcen":
-      actual = pantalla.value;
-
-      pantalla.value = anterior * actual;
-
-      anterior = pantalla.value;
-  
-      break;
-    default:
-      pantalla.value = 0;
-  }
 };
