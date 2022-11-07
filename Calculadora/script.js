@@ -5,7 +5,6 @@ let select = document.getElementById("calculadoras");
 select.addEventListener('change',
   function(){
     var selectedOption = this.options[select.selectedIndex];
-    console.log(selectedOption.value + ': ' + selectedOption.text);
 
     if (selectedOption.value == "numerica"){
       document.getElementById("estilos").href = "./style.css"

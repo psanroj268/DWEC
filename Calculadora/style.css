@@ -5,7 +5,7 @@ body {
 #container {
     margin: auto;
     margin-top: 8%;
-    background-color: #9dd2ea;
+    background-color: #fa681a;
     width: 19.5%; /* Para la científica 29%*/
     height: 470px;
     text-align: center;
@@ -79,7 +79,7 @@ input {
 input:hover{
     border: 0 solid #000;
     color: #495069;
-    background-color: #8f5fda;
+    background-color: #5fd0da;
     border-radius: 4px;
     width: 57px;
     height: 11%;
