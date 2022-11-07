@@ -1,5 +1,22 @@
 "use strict";
 
+let select = document.getElementById("calculadoras");
+
+select.addEventListener('change',
+  function(){
+    var selectedOption = this.options[select.selectedIndex];
+    console.log(selectedOption.value + ': ' + selectedOption.text);
+
+    if (selectedOption.value == "numerica"){
+      document.getElementById("estilos").href = "./style.css"
+    } else if (selectedOption.value == "científica"){
+      document.getElementById("estilos").href = "./style2.css"
+    }
+  });
+
+
+let cientific = document.getElementById("cientifica");
+
 let pantalla = document.getElementById("answer");
 let pantalla2 = document.getElementById("answer2");
 
