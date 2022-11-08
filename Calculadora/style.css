@@ -1,5 +1,7 @@
 body {
     background-color: black;
+    background-image: url("./images/Imagen1.png");
+    background-size: cover;
 }
 
 #container {
@@ -96,5 +98,16 @@ input:hover{
 }
 
 #parent{
+    position: relative;
+}
+
+.child{
+    position: absolute;
+    top: 18%;
+    left: 0;
+    height: 100%;
+}
+
+.parent{
     position: relative;
 }

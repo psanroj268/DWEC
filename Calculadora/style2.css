@@ -1,11 +1,13 @@
 body {
     background-color: black;
+    background-image: url("./images/Imagen1.png");
+    background-size: cover;
 }
 
 #container {
     margin: auto;
     margin-top: 8%;
-    background-color: #9dd2ea;
+    background-color: #dd2186;
     width: 29%; /* Para la científica 29%*/
     height: 470px;
     text-align: center;
@@ -95,5 +97,16 @@ input:hover{
 }
 
 #parent{
+    position: relative;
+}
+
+.child{
+    position: absolute;
+    top: 18%;
+    left: 0;
+    height: 100%;
+}
+
+.parent{
     position: relative;
 }
