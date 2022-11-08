@@ -1,5 +1,10 @@
 "use strict";
 
+igual.onclick = function () {
+  teclaIgual();
+  
+};
+
 function teclaIgual() {
   switch (operador) {
     case "+":

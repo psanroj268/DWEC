@@ -30,7 +30,7 @@ input {
     border: 0;
     color: #495069;
     background-color: 4px;
-    width: 57px;
+    width: 13.8%;
     height: 11%;
     float: left;
     margin: 5px;
@@ -80,7 +80,7 @@ input:hover{
     color: #495069;
     background-color: #8f5fda;
     border-radius: 4px;
-    width: 57px;
+    width: 13.8%;
     height: 11%;
     float: left;
     margin: 5px;

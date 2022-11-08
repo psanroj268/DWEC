@@ -31,7 +31,7 @@ input {
     border: 0;
     color: #495069;
     background-color: 4px;
-    width: 57px;
+    width: 20.5%;
     height: 11%;
     float: left;
     margin: 5px;
@@ -81,7 +81,7 @@ input:hover{
     color: #495069;
     background-color: #5fd0da;
     border-radius: 4px;
-    width: 57px;
+    width: 20.5%;
     height: 11%;
     float: left;
     margin: 5px;
