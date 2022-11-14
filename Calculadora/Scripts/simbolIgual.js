@@ -11,6 +11,8 @@ function teclaIgual() {
       actual = pantalla.value;
 
       pantalla.value = parseFloat(anterior) + parseFloat(actual);
+
+      pantalla.value = (+pantalla.value.toFixed(3));
       resultado8 = pantalla.value;
       break;
     case "-":
